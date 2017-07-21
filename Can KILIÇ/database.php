@@ -1,12 +1,18 @@
-<?php
-$dbhost="localhost";
-$dbname="proje";
-$user="root";
-$pass="";
+<?php 
+
+$host="localhost";
+$username="root";
+$sifre="";
+$veritabani="can";
 
 try {
-  $db= new PDO("mysql:host=$dbhost;dbname=$dbname;charset=utf8",$user,$pass);
-} catch (PDOException $e) {
-  print $e -> getMessage();
+     $db = new PDO("mysql:host=$host;dbname=$veritabani;charset=utf8",$username,$sifre );
+} catch ( PDOException $e ){
+     print $e->getMessage();
 }
+
+
+
+
+
 ?>

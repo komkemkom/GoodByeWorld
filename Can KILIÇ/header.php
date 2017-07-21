@@ -1,19 +1,18 @@
-<?php include_once "database.php" ?>
-
-<!DOCTYPE html>
+<?php 
+include_once "database.php";
+include_once "functions.php"; ?>
+   <!DOCTYPE html>
 <!--[if lt IE 8 ]><html class="no-js ie ie7" lang="en"> <![endif]-->
 <!--[if IE 8 ]><html class="no-js ie ie8" lang="en"> <![endif]-->
 <!--[if IE 9 ]><html class="no-js ie ie9" lang="en"> <![endif]-->
 <!--[if (gte IE 8)|!(IE)]><!--><html class="no-js" lang="en"> <!--<![endif]-->
 
-<head>
-
-
+   <head>
    <!--- Basic Page Needs
    ================================================== -->
    <meta charset="utf-8">
-	<title>İbrahim KURT</title>
-	<meta name="description" content="">
+	<title>Keep It Simple.</title>
+	<meta name="description" content="">  
 	<meta name="author" content="">
 
 	<!-- mobile specific metas
@@ -23,8 +22,8 @@
    <!-- CSS
     ================================================== -->
    <link rel="stylesheet" href="css/default.css">
-	<link rel="stylesheet" href="css/layout.css">
-	<link rel="stylesheet" href="css/media-queries.css">
+	<link rel="stylesheet" href="css/layout.css">  
+	<link rel="stylesheet" href="css/media-queries.css"> 
 
    <!-- Script
    ================================================== -->
@@ -33,64 +32,62 @@
    <!-- Favicons
 	================================================== -->
 	<link rel="shortcut icon" href="favicon.png" >
-
-</head>
-
-<body>
-
-   <!-- Header
+	 <!-- Java Script
    ================================================== -->
-   <header id="top">
+   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+   <script>window.jQuery || document.write('<script src="js/jquery-1.10.2.min.js"><\/script>')</script>
+   <script type="text/javascript" src="js/jquery-migrate-1.2.1.min.js"></script>  
+   <script src="js/main.js"></script>
+
+	</head>
+	<body>
+
+ <header id="top">
 
    	<div class="row">
 
    		<div class="header-content twelve columns">
-       <?php
-        $sorgu = $db->query("SELECT * FROM header_yazi " , PDO::FETCH_ASSOC);
-        if($sorgu -> rowCount()){
-          foreach ($sorgu as $row) {
-        ?>
-		      <h1 id="logo-text"><a href="index.php" title=""><?php echo $row['Baslik'] ?></a></h1>
-				<p id="intro"><?php echo $row ['Slogan'] ?></p>
-        <?php
-          }
-        }
-        ?>
 
+		      <h1 id="logo-text"><a href="index.html" title="">Who Is Muhammed Can KILIC</a></h1>
+				<p id="intro">Put your awesome slogan here...</p>
 
-			</div>
+			</div>			
 
 	   </div>
 
-	   <nav id="nav-wrap">
+	   <nav id="nav-wrap"> 
 
 	   	<a class="mobile-btn" href="#nav-wrap" title="Show navigation">Show Menu</a>
 		   <a class="mobile-btn" href="#" title="Hide navigation">Hide Menu</a>
 
-	   	<div class="row">
-        <?php
-         $sorgu = $db->query("SELECT * FROM menuler " , PDO::FETCH_ASSOC);
-         if($sorgu -> rowCount()){
-           foreach ($sorgu as $row) {
-         ?>
+	   	<div class="row">    		            
+
 			   	<ul id="nav" class="nav">
-			      	<li class="current"><a href="index.php"><?php echo $row['Menu1'] ?></a></li>
-	               <li><a href="demo.php"><?php echo $row['Menu2'] ?></a></li>
-	               <li><a href="archives.php"><?php echo $row['Menu3'] ?></a></li>
-			      	<li class="has-children"><a href="single.php"><?php echo $row['Menu4'] ?></a>
+			      	<li class="current"><a href="index.html">Home</a></li>
+			      	<li class="has-children"><a href="#">Dropdown</a>
+	                  <ul>
+	                     <li><a href="#">Submenu 01</a></li>
+	                     <li><a href="#">Submenu 02</a></li>
+	                     <li><a href="#">Submenu 03</a></li>
+	                  </ul>
+	               </li>
+	               <li><a href="demo.html">Demo</a></li>	
+	               <li><a href="archives.html">Archives</a></li>
+			      	<li class="has-children"><a href="single.html">Blog</a>
 							<ul>
 	                     <li><a href="blog.php">Blog Entries</a></li>
-	                     <li><a href="single.php">Single Blog</a></li>
+	                     <li><a href="single.php">Single Blog</a></li>	                     
 	                  </ul>
-			      	</li>
-			      	<li><a href="page.php"><?php echo $row['Menu5'] ?></a></li>
-			   	</ul> <!-- end #nav -->
-          <?php
-            }
-          }
-          ?>
-	   	</div>
+			      	</li>		      	
+			      	<li><a href="page.html">Page</a></li>
+			      	<li class="has-children"><a href="#">Sign Up/Log In</a>	<ul>
+	                     <li><a href="facebook/index.php">Sign Up</a></li>
+	                     <li><a href="single.html">Log In</a></li>	                     
+	                  </ul>
+			   	</ul> <!-- end #nav -->			   	 
 
-	   </nav> <!-- end #nav-wrap -->
+	   	</div> 
+
+	   </nav> <!-- end #nav-wrap --> 	     
 
    </header> <!-- Header End -->
